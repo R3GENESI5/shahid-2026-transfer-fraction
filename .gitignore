@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.ipynb_checkpoints/
+.venv/
+venv/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Large raw data — fetch from official sources
+*.nc
+*.nc4
+*.h5
+*.hdf5
+*.grib
+*.grib2
+analysis/data/raw/
+analysis/data/era5_winds/
+
+# Intermediate trajectory outputs (rerun if needed; produced by 04_run_trajectories.py)
+analysis/results/trajectories/
+
+# Temp / scratch
+*.tmp
+*.bak
+*~
+
+# Keep explicitly
+!analysis/data/site_summary_v3_full.csv
+!analysis/results/*.csv
+!analysis/results/*.json
+!figures/*.py
+!figures/*.pdf
+!figures/*.png
+!figures/*.csv

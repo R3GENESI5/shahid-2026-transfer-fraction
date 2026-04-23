@@ -1,0 +1,62 @@
+{
+  "paper_e_reference": {
+    "site": "BR-Sa1",
+    "LE": 87.1,
+    "CRE_SW": -52.3,
+    "CRE_LW": 41.1,
+    "CRE_net": -11.2,
+    "eta_site": 0.129
+  },
+  "basin_level": {
+    "Amazon_CRE_net": -19.764053344726562,
+    "Amazon_LE_W_m2": 95.06426344208685,
+    "Amazon_ET_mm_yr": 1200,
+    "eta_basin": 0.20790202994384765,
+    "eta_basin_pct": 20.8,
+    "recycling_amplification": 1.61
+  },
+  "per_oceanic_input": {
+    "LE_ocean_W_m2": 87.14224148857961,
+    "P_ocean_mm_yr": 1100,
+    "eta_per_oceanic": 0.227,
+    "eta_per_oceanic_pct": 22.7
+  },
+  "attenuation_mechanism": {
+    "CRE_LW_vs_CAPE_slope": 0.0322,
+    "CRE_LW_vs_CAPE_R2": 0.739,
+    "CRE_LW_vs_CAPE_p": 2.391523082810122e-06,
+    "CRE_SW_vs_CAPE_slope": -0.0202,
+    "CRE_SW_vs_CAPE_R2": 0.273,
+    "CRE_net_vs_CAPE_slope": 0.012,
+    "CRE_net_vs_CAPE_R2": 0.152,
+    "LW_SW_ratio_at_CAPE_200": 0.6,
+    "LW_SW_ratio_at_CAPE_1000": 0.86
+  },
+  "transect_gradient": {
+    "Amazon_coast_CRE_SW": -53.74246597290039,
+    "Amazon_interior_CRE_SW": -70.03626251220703,
+    "Amazon_coast_CRE_LW": 39.461151123046875,
+    "Amazon_interior_CRE_LW": 56.456363677978516,
+    "Amazon_coast_cloud_pct": 68.99815368652344,
+    "Amazon_interior_cloud_pct": 83.26060485839844
+  },
+  "deforestation_counterfactual": {
+    "mean_delta_CRE_net": -7.1,
+    "range_delta_CRE_net": [
+      -11.5,
+      -2.6
+    ],
+    "mean_delta_cloud_pct": 7.6
+  },
+  "financial": {
+    "single_site_USD_ha_yr": 86,
+    "recycling_corrected_USD_ha_yr": 139,
+    "uncorrected_USD_ha_yr": 402,
+    "carbon_market_range": [
+      5,
+      50
+    ],
+    "baker_rainfall_USD_ha_yr": 59
+  },
+  "f_required_for_75pct": 0.83
+}

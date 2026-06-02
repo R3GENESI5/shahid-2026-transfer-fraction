@@ -10,7 +10,7 @@ Current version: **v5** (n = 341 sites; FluxDataKit-v3 pooled with JapanFlux2024
 
 ## What this repository contains
 
-The analysis pipeline and the 9 published figures for the paper. The manuscript PDF, LaTeX source, and DOCX outputs are not in this repository; the ESSOAr preprint is the authoritative document.
+The manuscript (PDF, DOCX, and LaTeX source), the analysis pipeline, and the 9 published figures. The ESSOAr preprint at the DOI above is the authoritative version; the files in `manuscript/` are kept in sync with it.
 
 ## Core results (v5)
 
@@ -44,6 +44,16 @@ shahid-2026-transfer-fraction/
 ├── LICENSE                    ← MIT
 ├── CITATION.cff               ← citation metadata
 ├── .gitignore
+│
+├── manuscript/                ← the v5 manuscript itself
+│   ├── Shahid_2026_v5_latex.pdf                  Main paper (PDF, journal-ready)
+│   ├── Shahid_2026_v5_Supplementary_latex.pdf    Supplement (PDF)
+│   ├── Shahid_2026_v5_complete.pdf               Merged main + supplement (single PDF)
+│   ├── Shahid_2026_v5.docx                       Main paper (DOCX, Arial 11, Word-compatible)
+│   ├── Shahid_2026_v5_Supplementary.docx         Supplement (DOCX)
+│   ├── paper_body_v5.tex                         Main paper body (LaTeX source)
+│   ├── supp_body_v5.tex                          Supplement body (LaTeX source)
+│   └── build_latex_v5.py                         PDF build script (xelatex driver)
 │
 ├── figures/                   ← 9 published figures (PDF + PNG, 300 DPI; both _titled and _notitled variants)
 │   ├── 06_build_figs_v5.py                Unified v5 figure builder (all 9 figures)
@@ -136,6 +146,19 @@ python 06d_control_test_preloaded.py
 Runs the 56-ensemble symmetric control matrix (7 years × 4 seasons × 2 source regions) in approximately 108 seconds on one CPU core. Writes `analysis/results/control_comparison_preloaded.csv` and prints summary statistics. Scripts `06b` (per-parcel, slow) and `06c` (vectorized without preloading) reproduce the same result by different algorithms and are provided for cross-validation.
 
 See `analysis/scripts/PIPELINE.md` for implementation notes.
+
+## Building the manuscript PDF
+
+```bash
+cd manuscript
+python build_latex_v5.py
+```
+
+Requires xelatex (MiKTeX or TeX Live with `fontspec`, `siunitx`, `longtable`, `microtype`). The script reads `paper_body_v5.tex` and `supp_body_v5.tex`, applies the standard preamble, and produces:
+- `Shahid_2026_v5_latex.pdf` (main paper)
+- `Shahid_2026_v5_Supplementary_latex.pdf` (supplement)
+
+Figures embedded from `../figures/` (the `_notitled` variants by manuscript convention; figure titles live in captions). To merge main + supplement into a single PDF, use `pypdf` (see the cell at the end of the local build session, or any standard PDF merge tool).
 
 ## Building the DOCX version
 

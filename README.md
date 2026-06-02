@@ -146,7 +146,7 @@ For machine-readable citation, see `CITATION.cff`.
 
 ## Companion papers in the programme
 
-- Shahid, A. B. (2026a). *Biome-specific radiative forcing coefficients reveal ecosystems as active climate regulators.* ESSOAr: [10.22541/essoar.15001972/v1](https://doi.org/10.22541/essoar.15001972/v1)
+- Shahid, A. B. (2026a). *Biome-specific radiative forcing coefficients reveal ecosystems as active climate regulators.* ESSOAr: [10.22541/essoar.15001972/v2](https://doi.org/10.22541/essoar.15001972/v2)
 - Shahid, A. B. (2026b). *Does biome-specific surface energy partitioning propagate to the top of atmosphere?* ESSOAr: [10.22541/essoar.15002157/v1](https://doi.org/10.22541/essoar.15002157/v1)
 - Shahid, A. B. (2026c). *Collapse of the moisture corridors that sustain inland rainfall in the Amazon and Congo.* ESSOAr: [10.22541/essoar.15002167/v1](https://doi.org/10.22541/essoar.15002167/v1)
 

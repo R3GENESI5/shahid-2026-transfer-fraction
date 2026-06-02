@@ -1,0 +1,52 @@
+======================================================================
+Paper 6 v5 merge: 314 FluxDataKit + 28 JapanFlux2024 = 342 sites
+======================================================================
+
+[load] D:\Projects\Programme\paper_1_alpha_beta\outputs\toa_tables\site_summary_v3_full.csv
+  rows: 314
+[load] D:\chagpt export\pace-alpha-coefficients\paper_e\manuscript\v5_rerun\jf_sites_extended_ceres.csv
+  rows in JF table: 44
+  WARNING: missing from JF table: ['ID-PaD']
+  filtered to Paper 1 v3 + MY-LHP universe: 27
+  cols only in P6 (will be NaN for JF rows): ['bowen_median', 'bowen_std', 'cre_djf', 'cre_jja', 'era5_blh', 'era5_cape', 'era5_precip', 'era5_tcwv', 'forcing_proxy', 'forcing_proxy_raw']...
+  cols only in JF (will be NaN for P6 rows): []
+  combined rows: 341
+
+[eta] computed for 341/341 sites
+  median eta (n=314 FluxDataKit-only): 0.3013
+  median eta (n=28 JapanFlux2024-only): 0.4374
+  median eta (n=342 combined): 0.3162
+  eta range: [0.0012, 1.9684]
+  sites outside [0.05, 0.50]: 110
+  extreme sites (first 10):
+    CH-Oe1      igbp=GRA   eta=0.502  LE=50.2  CRE_net=-25.2
+    US-Tw5      igbp=WET   eta=0.031  LE=92.1  CRE_net=-2.8
+    US-Tw4      igbp=WET   eta=0.024  LE=116.5  CRE_net=-2.8
+    US-Twt      igbp=CRO   eta=0.024  LE=116.9  CRE_net=-2.8
+    FR-Lq1      igbp=GRA   eta=0.606  LE=45.3  CRE_net=-27.5
+    DE-Seh      igbp=CRO   eta=0.559  LE=50.9  CRE_net=-28.4
+    US-EML      igbp=OSH   eta=0.579  LE=29.8  CRE_net=-17.2
+    US-Bi1      igbp=CRO   eta=0.028  LE=100.7  CRE_net=-2.8
+    US-Myb      igbp=WET   eta=0.033  LE=85.5  CRE_net=-2.8
+    IE-Dri      igbp=GRA   eta=0.679  LE=50.1  CRE_net=-34.0
+
+[tropical EBF check]
+  P6 tropical EBF (FluxDataKit-only, n=8): median eta = 0.1468
+  JF tropical EBF (n=4): median eta = 0.1526
+  combined tropical EBF (n=12): median eta = 0.1468
+  combined tropical EBF detail:
+    AU-Ctr      lat=-16.10  eta=0.069  LE=122.0  CRE=-8.4  source=FluxDataKit-v3
+    AU-Cow      lat=-16.24  eta=0.082  LE=102.2  CRE=-8.4  source=FluxDataKit-v3
+    GF-Guy      lat= +5.28  eta=0.211  LE=99.3  CRE=-21.0  source=FluxDataKit-v3
+    ID-Pag      lat= -2.32  eta=0.071  LE=97.8  CRE=+6.9  source=FluxDataKit-v3
+    BR-Sa1      lat= -2.86  eta=0.129  LE=87.1  CRE=-11.2  source=FluxDataKit-v3
+    BR-Sa3      lat= -3.02  eta=0.165  LE=111.0  CRE=-18.3  source=FluxDataKit-v3
+    AU-Rob      lat=-17.12  eta=0.222  LE=126.7  CRE=-28.2  source=FluxDataKit-v3
+    CN-Din      lat=+23.17  eta=0.982  LE=49.9  CRE=-49.0  source=FluxDataKit-v3
+    ID-Pag      lat= -2.32  eta=0.064  LE=108.7  CRE=+6.9  source=JapanFlux2024
+    KH-Kmp      lat=+12.74  eta=0.056  LE=105.5  CRE=+5.9  source=JapanFlux2024
+    MY-LHP      lat= +4.20  eta=0.242  LE=88.6  CRE=+21.4  source=JapanFlux2024
+    TH-Kog      lat=+18.80  eta=0.310  LE=73.3  CRE=-22.7  source=JapanFlux2024
+
+[write] D:\chagpt export\pace-alpha-coefficients\paper_e\manuscript\v5_rerun\site_summary_v5_n342.csv
+  rows=341, cols=48

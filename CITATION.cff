@@ -6,7 +6,8 @@ authors:
     given-names: Ali Bin
     email: ab.itzhaq@gmail.com
     orcid: "https://orcid.org/0009-0003-9709-4241"
-date-released: "2026-04-24"
+date-released: "2026-06-02"
+version: "5"
 license: MIT
 repository-code: "https://github.com/R3GENESI5/shahid-2026-transfer-fraction"
 preferred-citation:
@@ -24,8 +25,10 @@ keywords:
   - cloud radiative effect
   - CERES EBAF
   - FLUXNET
+  - JapanFlux2024
   - biophysical forcing
   - moisture recycling
   - tropical forests
   - Amazon
-  - biophysical valuation
+  - Congo
+  - SE Asia

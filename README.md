@@ -4,25 +4,37 @@ Supplementary code and figures for:
 
 **Shahid, A. B. (2026).** *Empirical constraints on the fraction of surface latent heat flux reaching the top of atmosphere as net radiative cooling.* ESSOAr preprint.
 
+Current version: **v5** (n = 341 sites; FluxDataKit-v3 pooled with JapanFlux2024; matches Paper 1 v3 site universe).
+
 ---
 
 ## What this repository contains
 
-The analysis pipeline, the 9 published figures, and the forest valuation practitioner guide for the paper. The manuscript PDF and LaTeX source are not in this repository; the ESSOAr preprint is the authoritative document.
+The analysis pipeline and the 9 published figures for the paper. The manuscript PDF, LaTeX source, and DOCX outputs are not in this repository; the ESSOAr preprint is the authoritative document.
 
-## Core results
+## Core results (v5)
 
 | Quantity | Value |
 |----------|-------|
-| Global median η (314 FLUXNET sites, all biomes) | **30.0%** [95% CI 27.1–34.5%] |
-| Tropical evergreen broadleaf forest median η (8 sites, 4 continents) | **14.7%** (range 6.9–22.2%) |
+| Sample size | **341 FLUXNET sites** (FluxDataKit-v3 + JapanFlux2024, five continents) |
+| Global median η, all biomes | **31.6%** [95% CI 28.3–35.8%] |
+| Tropical evergreen broadleaf forest median η (12 sites, 5 continents) | **14.7%** (range 5.6–31.0% excluding the subtropical-monsoon outlier CN-Din) |
 | Amazon basin η | **20.8%** (CRE_net = −19.8 W/m², LE = 95.1 W/m²) |
 | Congo basin η / SE Asia basin η | 17.1% / 20.1% |
-| Recycling amplification (Amazon / Congo / SE Asia) | 1.62× / 1.63× / 1.57× |
-| CRE_LW vs CAPE regression | R² = 0.74, slope = 0.032 W/m² per J/kg |
+| Recycling amplification (Amazon / Congo / SE Asia) | 1.62× / 1.63× / 1.57× (forward) |
+| SE Asia tropical EBF anchors (FLUXNET, n = 5) | mean 13.3%, median 6.7%; sites MY-LHP (24.2%), ID-PaB (5.8%), ID-Pag (7.1% FDK / 6.4% JF), KH-Kmp (5.6%), TH-Kog (31.0%) |
+| Congo basin FLUXNET anchor | None (largest unresolved limitation; awaits AfriFlux) |
+| CRE_LW vs CAPE regression | R² = 0.74, slope = 0.032 W/m² per J/kg, n = 19 regions |
 | Trajectory control, Amazon − Atlantic (n=28) | +0.44 W/m² (t = 0.21, p = 0.83; null indistinguishable) |
-| Forest valuation, small patch (site-level anchor) | $86/ha/yr at SCC $120 |
-| Forest valuation, basin-scale contiguous forest | $139/ha/yr at SCC $120 |
+
+**Note on valuation**: v5 deliberately omits per-hectare dollar valuation. The TOA radiative pathway is one of several biophysical mechanisms; translating η into per-hectare conservation value (with social cost of carbon, counterfactual land cover, and scale-dependent attribution assumptions) is the subject of the companion cascade-valuation paper (Paper 8, in preparation). Earlier v4.2 contained `$86/ha/yr` and `$139/ha/yr` estimates; these have been pulled per the scope discipline of v5.
+
+## Version history
+
+| Version | Sites | Global median η | Key change |
+|---------|-------|------------------|------------|
+| v4.2 | 314 (FluxDataKit-v3 only) | 30.0% | Universal reframe; dual-anchor disclosure |
+| **v5** | **341** (+ JapanFlux2024; matches Paper 1 v3) | **31.6%** | SE Asia tropical EBF anchors explicit; dollar valuation moved to Paper 8 |
 
 ## Repository layout
 
@@ -33,82 +45,82 @@ shahid-2026-transfer-fraction/
 ├── CITATION.cff               ← citation metadata
 ├── .gitignore
 │
-├── figures/                   ← the 9 published figures (PDF + PNG, 300 DPI)
-│   ├── build_figures_v4_diagrams.py       Fig 1, Fig 4
-│   ├── build_figures_v4_scatter.py        Fig 2, Fig 3, Fig 5
-│   ├── build_figures_v4_transects.py      Fig 6, Fig 7, Fig 8, Fig 9
-│   ├── fig1_three_streams.{pdf,png}       Three-stream decomposition at BR-Sa1
-│   ├── fig2_le_vs_cre_net.{pdf,png}       Surface LE vs TOA CRE_net across 314 sites
-│   ├── fig3_global_consistency.{pdf,png}  η histogram + biome medians + latitude
-│   ├── fig4_study_regions.{pdf,png}       Basin polygons on CRE_net map
-│   ├── fig5_cape_cre_lw.{pdf,png}         CAPE vs CRE_LW regression
-│   ├── fig6_cross_basin_transects.{pdf,png}  Coast-to-interior CRE transects
-│   ├── fig7_recycling_amplification.{pdf,png}  Eltahir–Bras recycling model
-│   ├── fig8_seasonal_transect.{pdf,png}   Wet vs dry Amazon seasonal transect
-│   ├── fig9_deforestation_counterfactual.{pdf,png}  Intact vs arc CRE difference
-│   └── fig5_region_data.csv               Provenance: per-region CAPE + CRE values
+├── figures/                   ← 9 published figures (PDF + PNG, 300 DPI; both _titled and _notitled variants)
+│   ├── 06_build_figs_v5.py                Unified v5 figure builder (all 9 figures)
+│   ├── fig1_three_streams_{titled,notitled}.{pdf,png}        Three-stream Sankey schematic at BR-Sa1
+│   ├── fig2_le_vs_cre_net_{titled,notitled}.{pdf,png}        Surface LE vs TOA CRE_net (341 sites)
+│   ├── fig3_global_consistency_{titled,notitled}.{pdf,png}   η histogram + biome medians + latitude (1+2 layout)
+│   ├── fig4_study_regions_{titled,notitled}.{pdf,png}        Basin polygons on CRE_net map
+│   ├── fig5_cape_cre_lw_{titled,notitled}.{pdf,png}          CAPE vs CRE_LW regression (adjustText labels)
+│   ├── fig6_cross_basin_transects_{titled,notitled}.{pdf,png}    Amazon/Congo/SE Asia transects (1+2 layout)
+│   ├── fig7_recycling_amplification_{titled,notitled}.{pdf,png}  Eltahir-Bras recycling model
+│   ├── fig8_seasonal_transect_{titled,notitled}.{pdf,png}    Wet vs dry Amazon seasonal transect
+│   └── fig9_deforestation_counterfactual_{titled,notitled}.{pdf,png}    Intact vs arc CRE difference
 │
-├── analysis/                  ← data pipeline cited in the supplementary
+├── analysis/                  ← v5 data pipeline
 │   ├── requirements.txt
 │   ├── data/
-│   │   └── site_summary_v3_full.csv       314 FLUXNET sites joined with CERES
+│   │   ├── site_summary_v5_n342.csv      ★ 341-site joint table with η column (v5 production data)
+│   │   ├── jf_sites_extended_ceres.csv   JapanFlux2024 sites with full CERES columns
+│   │   └── site_summary_v3_full.csv      314-site FluxDataKit-v3 base (v4.2 reference)
 │   ├── scripts/
-│   │   ├── 01_basin_analysis.py           Basin-scale CRE extraction + η
-│   │   ├── 02_build_figures.py            Intermediate figure-build (reference)
-│   │   ├── 03_download_era5_winds.py      ERA5 6-hourly 200 hPa u, v download
-│   │   ├── 04_run_trajectories.py         Forward Lagrangian integration (main ensemble)
-│   │   ├── 05_correlate_trajectories_with_ceres.py   Endpoint OLR coupling
-│   │   ├── 06_control_test.py             Original v3 Atlantic control (n=4, 2010 only)
-│   │   ├── 06b_control_test_extended.py   Extended control n=28, per-parcel (slow, documentation)
-│   │   ├── 06c_control_test_vectorized.py Vectorized control, no preloading (I/O-bound, documentation)
-│   │   ├── 06d_control_test_preloaded.py  ★ Production: preloaded vectorized, ~108s for 56 ensembles
-│   │   ├── 07_generate_supplementary_figure.py       Supplementary trajectory figure
-│   │   └── PIPELINE.md                    Trajectory pipeline reference doc
+│   │   ├── 01_jf_sites_extended_ceres.py     CERES extraction for JapanFlux2024 sites
+│   │   ├── 02_merge_n342.py                  Merge 314 + 27 + MY-LHP → 341 + η computation
+│   │   ├── 05_patch_manuscript.py            v4.2 → v5 number patches (text)
+│   │   ├── 07_remove_dollars.py              Dollar valuation extraction (Paper 8 redirect)
+│   │   ├── 08_build_docx.py                  DOCX build (pandoc + python-docx clean-up)
+│   │   ├── 01_basin_analysis.py              Basin-scale CRE extraction + η
+│   │   ├── 03_download_era5_winds.py         ERA5 6-hourly 200 hPa u,v download
+│   │   ├── 04_run_trajectories.py            Forward Lagrangian integration (main ensemble)
+│   │   ├── 05_correlate_trajectories_with_ceres.py    Endpoint OLR coupling
+│   │   ├── 06_control_test.py / 06b / 06c / 06d_control_test_preloaded.py   Atlantic-source control
+│   │   ├── 07_generate_supplementary_figure.py    Supplementary trajectory figure
+│   │   └── PIPELINE.md                       Trajectory pipeline reference
 │   └── results/
-│       ├── control_comparison_preloaded.csv          Atlantic control n=28 (primary result)
+│       ├── merge_diagnostics.txt             v5 merge audit log
+│       ├── control_comparison_preloaded.csv  Atlantic control n=28 (primary result)
 │       ├── summary_key_numbers.json
-│       ├── table1_basin_cre.csv           Basin-mean CRE_SW, CRE_LW, CRE_net, LE
-│       ├── table2_amazon_transect.csv     Amazon coast-to-interior profile
-│       ├── table3_congo_transect.csv      Congo coast-to-interior profile
-│       ├── table4_se_asia_transect.csv    SE Asia coast-to-interior profile
-│       ├── table5_seasonal_amazon_wet.csv Wet-season transect
-│       ├── table6_seasonal_amazon_dry.csv Dry-season transect
-│       ├── table7_deforestation_counterfactual.csv   Intact vs arc CRE
-│       ├── table8_cre_lw_vs_cape.csv      19-region regression data
-│       ├── table9_recycling_model.csv     Eltahir-Bras amplification sensitivity
-│       └── table10_cloud_top_properties.csv          Cloud top temperature diagnostic
+│       ├── table1_basin_cre.csv to table10_cloud_top_properties.csv    Per-figure intermediate tables
+│       └── (other per-figure CSVs)
 │
-└── docs/
+└── docs/                      ← legacy practitioner guide (v4.2-era; dollar values now apply only with caveats; cf. Paper 8)
     ├── forest_valuation_practitioner_guide.md
     └── forest_valuation_practitioner_guide.pdf
 ```
 
-## Reproducing the figures
+## Reproducing the v5 figures
 
 ```bash
 cd figures
 pip install -r ../analysis/requirements.txt
-pip install adjustText cartopy
+pip install adjustText xarray
 
-# Figures 1 + 4 (three-stream diagram + study-region map)
-python build_figures_v4_diagrams.py
-
-# Figures 2 + 3 + 5 (scatter + global consistency + CAPE regression)
-python build_figures_v4_scatter.py
-
-# Figures 6 + 7 + 8 + 9 (transects + recycling + seasonal + deforestation counterfactual)
-python build_figures_v4_transects.py
+# All 9 figures in both titled and notitled variants
+python 06_build_figs_v5.py
 ```
 
-Each build script reads the inputs listed below and writes PDF (vector) and PNG (300 DPI) outputs in place.
+The build script reads `../analysis/data/site_summary_v5_n342.csv`, the CERES EBAF NetCDF (path hardcoded; adjust `CERES_NC` constant), and an ERA5 CAPE NetCDF for figure 5. Outputs go to `./figures/figN_NAME_{titled,notitled}.{pdf,png}`.
+
+`_titled` variants embed the figure title (suitable for slide decks, the practitioner guide). `_notitled` variants are what the manuscript embeds (journal convention: title goes in caption).
+
+## Reproducing v5 site sample (341 sites from 314)
+
+```bash
+cd analysis/scripts
+python 01_jf_sites_extended_ceres.py   # 44 JapanFlux2024 sites with full CERES columns
+python 02_merge_n342.py                # Merge with 314-site FluxDataKit base; compute η
+```
+
+Verification: `merge_diagnostics.txt` reports the per-source η medians and the ID-Pag / ID-PaD same-tower dedup decision (kept ID-Pag, dropped ID-PaD as duplicate processing run of the same Borneo peatland).
 
 ## Data inputs required (not tracked in this repo)
 
 | Input | Source | Used by |
 |-------|--------|---------|
-| FLUXNET2015 + ONEFlux joined site summary | `analysis/data/site_summary_v3_full.csv` (included) | Figs 1, 2, 3 |
+| FluxDataKit-v3 (FLUXNET2015 + ONEFlux synthesis, 314 sites) | [Zenodo 10.5281/zenodo.10885933](https://doi.org/10.5281/zenodo.10885933) | All scripts |
+| JapanFlux2024 release (Hirano et al. 2025) | [Earth System Science Data 17:3807](https://doi.org/10.5194/essd-17-3807-2025) and [Arctic Data archive System](https://ads.nipr.ac.jp/japan-flux2024/) | Scripts 01, 02 |
 | CERES EBAF Ed4.2 monthly TOA radiation | [NASA LaRC CERES](https://ceres.larc.nasa.gov/data/) | Figs 4, 5, 6, 7, 8, 9; basin extraction; deforestation counterfactual |
-| ERA5 6-hourly 200 hPa winds | [Copernicus CDS](https://cds.climate.copernicus.eu/) | Control experiment (scripts 04, 06b, 06c, 06d) |
+| ERA5 6-hourly 200 hPa winds | [Copernicus CDS](https://cds.climate.copernicus.eu/) | Control experiment (scripts 04, 06b–06d) |
 | ERA5 CAPE monthly | [Copernicus CDS](https://cds.climate.copernicus.eu/) | Fig 5 |
 | MODIS MCD12C1 land cover | [NASA LP DAAC](https://lpdaac.usgs.gov/) | Fig 9 deforestation counterfactual |
 
@@ -121,20 +133,25 @@ cd analysis/scripts
 python 06d_control_test_preloaded.py
 ```
 
-Runs the 56-ensemble symmetric control matrix (7 years × 4 seasons × 2 source regions) in approximately 108 seconds on one CPU core. Writes `analysis/results/control_comparison_preloaded.csv` and prints summary statistics: mean Amazon−Atlantic endpoint OLR difference, std, range, one-sample t-test, and per-ENSO-phase breakdown. Scripts `06b` (per-parcel, slow) and `06c` (vectorized without preloading) reproduce the same result by different algorithms and are provided for cross-validation.
+Runs the 56-ensemble symmetric control matrix (7 years × 4 seasons × 2 source regions) in approximately 108 seconds on one CPU core. Writes `analysis/results/control_comparison_preloaded.csv` and prints summary statistics. Scripts `06b` (per-parcel, slow) and `06c` (vectorized without preloading) reproduce the same result by different algorithms and are provided for cross-validation.
 
-See `analysis/scripts/PIPELINE.md` for implementation notes and performance targets.
+See `analysis/scripts/PIPELINE.md` for implementation notes.
 
-## Forest valuation practitioner guide
+## Building the DOCX version
 
-For practitioners applying η to specific forest valuation cases, see `docs/forest_valuation_practitioner_guide.pdf`. Summary:
+```bash
+cd analysis/scripts
+python 08_build_docx.py
+```
 
-| Forest type | η applicable | Central $/ha/yr at SCC $120 |
-|------------|-------------|------------------------------|
-| Small patch, plantation, <50 km contiguous | **12.9%** (BR-Sa1 single-site anchor) | **$86** |
-| Basin-scale contiguous tropical forest (Amazon) | **20.8%** | **$139** |
+Uses pandoc to convert `paper_body_v5.tex` → docx, then python-docx applies:
+- Title block restyling (Arial 16 / 12 / 10)
+- Body font normalisation (Arial 11)
+- Figure sizing to 6.5" page width
+- Programmatic rebuild of Table 1, Table 2, Table S1, Table S2 (pandoc longtable conversion mis-aligns these cells; clean rebuild from constants)
+- Page numbers in footer
 
-Full decision tree, SCC sensitivity (at $51, $120, $200), alternative counterfactuals (pasture, savanna, shrubland), worked example for 5.5 M ha Amazon, and the list of biophysical cooling pathways this number does not capture are all in the guide.
+Requires `pandoc` on PATH and the `python-docx` package.
 
 ## Citation
 
@@ -146,9 +163,10 @@ For machine-readable citation, see `CITATION.cff`.
 
 ## Companion papers in the programme
 
-- Shahid, A. B. (2026a). *Biome-specific radiative forcing coefficients reveal ecosystems as active climate regulators.* ESSOAr: [10.22541/essoar.15001972/v2](https://doi.org/10.22541/essoar.15001972/v2)
-- Shahid, A. B. (2026b). *Does biome-specific surface energy partitioning propagate to the top of atmosphere?* ESSOAr: [10.22541/essoar.15002157/v1](https://doi.org/10.22541/essoar.15002157/v1)
-- Shahid, A. B. (2026c). *Collapse of the moisture corridors that sustain inland rainfall in the Amazon and Congo.* ESSOAr: [10.22541/essoar.15002167/v1](https://doi.org/10.22541/essoar.15002167/v1)
+- Shahid, A. B. (2026a). *Biome-specific radiative forcing coefficients reveal ecosystems as active climate regulators.* ESSOAr: [10.22541/essoar.15001972/v2](https://doi.org/10.22541/essoar.15001972/v2) (Paper 1 v3, n = 341)
+- Shahid, A. B. (2026b). *Does biome-specific surface energy partitioning propagate to the top of atmosphere?* ESSOAr: [10.22541/essoar.15002157/v1](https://doi.org/10.22541/essoar.15002157/v1) (Paper 2, n = 314)
+- Shahid, A. B. (2026c). *Collapse of the moisture corridors that sustain inland rainfall in the Amazon and Congo.* ESSOAr: [10.22541/essoar.15002167/v1](https://doi.org/10.22541/essoar.15002167/v1) (Paper 3)
+- Shahid, A. B. (2026, in preparation). *Cascade valuation of tropical forest cooling services across spatial scales.* (Paper 8 — picks up the per-hectare dollar translation that v5 of this paper deliberately omits)
 
 ## License
 

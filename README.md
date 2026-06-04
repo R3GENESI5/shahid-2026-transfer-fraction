@@ -180,4 +180,4 @@ Code is released under the MIT License (see `LICENSE`). Figures are released und
 
 ## Contact
 
-Ali Bin Shahid — ab.itzhaq@gmail.com — ORCID [0009-0003-9709-4241](https://orcid.org/0009-0003-9709-4241)
+Ali Bin Shahid — Ali@landiq.earth — ORCID [0009-0003-9709-4241](https://orcid.org/0009-0003-9709-4241)

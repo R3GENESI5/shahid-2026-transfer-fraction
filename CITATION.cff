@@ -5,6 +5,7 @@ authors:
   - family-names: Shahid
     given-names: Ali Bin
     email: ab.itzhaq@gmail.com
+    affiliation: "LandIQ"
     orcid: "https://orcid.org/0009-0003-9709-4241"
 date-released: "2026-06-04"
 version: "1.0.0"
@@ -16,6 +17,7 @@ preferred-citation:
   authors:
     - family-names: Shahid
       given-names: Ali Bin
+      affiliation: "LandIQ"
       orcid: "https://orcid.org/0009-0003-9709-4241"
   year: 2026
   journal: "ESSOAr preprint"

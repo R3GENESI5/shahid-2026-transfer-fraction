@@ -1,13 +1,13 @@
 cff-version: 1.2.0
 message: "If you use this software or data, please cite the associated paper and this repository."
-title: "Empirical constraints on the fraction of surface latent heat flux reaching the top of atmosphere as net radiative cooling — code and figures"
+title: "Empirical constraints on the fraction of surface latent heat flux reaching the top of atmosphere as net radiative cooling: code and figures"
 authors:
   - family-names: Shahid
     given-names: Ali Bin
     email: ab.itzhaq@gmail.com
     orcid: "https://orcid.org/0009-0003-9709-4241"
-date-released: "2026-06-02"
-version: "5"
+date-released: "2026-06-04"
+version: "1.0.0"
 license: MIT
 repository-code: "https://github.com/R3GENESI5/shahid-2026-transfer-fraction"
 preferred-citation:
@@ -20,6 +20,13 @@ preferred-citation:
   year: 2026
   journal: "ESSOAr preprint"
   doi: "TBD"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.20539525"
+    description: "Concept DOI (always resolves to latest version)"
+  - type: doi
+    value: "10.5281/zenodo.20539526"
+    description: "Version DOI (v1.0.0)"
 keywords:
   - transfer fraction
   - cloud radiative effect

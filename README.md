@@ -155,9 +155,15 @@ Requires `pandoc` on PATH and the `python-docx` package.
 
 ## Citation
 
-If you use this code or figures:
+If you use this code or figures, please cite both the paper and the code archive:
+
+**Paper** (ESSOAr preprint):
 
 > Shahid, A. B. (2026). *Empirical constraints on the fraction of surface latent heat flux reaching the top of atmosphere as net radiative cooling.* ESSOAr preprint. DOI: *[pending]*.
+
+**Code and figures** (Zenodo):
+
+> Shahid, A. B. (2026). *Empirical constraints on the fraction of surface latent heat flux reaching the top of atmosphere as net radiative cooling: code and figures.* Zenodo. [10.5281/zenodo.20539525](https://doi.org/10.5281/zenodo.20539525) (concept DOI, always resolves to latest version). v1.0.0 specifically: [10.5281/zenodo.20539526](https://doi.org/10.5281/zenodo.20539526).
 
 For machine-readable citation, see `CITATION.cff`.
 

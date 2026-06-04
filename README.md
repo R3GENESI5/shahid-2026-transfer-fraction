@@ -10,7 +10,7 @@ Current version: **v5** (n = 341 sites; FluxDataKit-v3 pooled with JapanFlux2024
 
 ## What this repository contains
 
-The analysis pipeline and the 9 published figures for the paper. The manuscript itself (PDF, DOCX, and LaTeX source) lives in the parent research programme repo at [R3GENESI5/research-programme/manuscripts/amazon/p6_transfer_fraction/](https://github.com/R3GENESI5/research-programme/tree/main/manuscripts/amazon/p6_transfer_fraction); the ESSOAr preprint at the DOI above is the authoritative version.
+The analysis pipeline and the 9 published figures for the paper. 
 
 ## Core results (v5)
 
